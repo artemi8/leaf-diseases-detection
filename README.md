@@ -37,7 +37,7 @@ We utilized the YOLOv8n model, a state-of-the-art object detection model with ap
   - mAP@50: 0.923
   - mAP@50-95: 0.79
 
-The second experiment showed improved metrics, demonstrating better overall model reliability and robustness.
+The second experiment, which incorporated class weights and extended training, resulted in improved mAP@50 and mAP@50-95 scores. While the improvements (from 0.917 to 0.923 for mAP@50 and from 0.78 to 0.79 for mAP@50-95) may appear small, they are significant in the context of object detection, indicating better overall model reliability and robustness. Notably, the second experiment showed better predictions for classes with fewer instances, such as Strawberry Blossom Blight, where experiment 1 had more false positives, this can be seen below in the example predictions comparison of experiment 1 versus experiment 2.
 
 ## Example Predictions
 
@@ -46,14 +46,6 @@ The second experiment showed improved metrics, demonstrating better overall mode
 
 **Experiment 2:**
 ![Predicted Image vs Ground Truth Image](runs_predictions/exp_2/4.png)
-
-## Challenges Faced
-
-Class imbalance led to higher false positives and false negatives for underrepresented classes. This was mitigated by applying class weights during training. An initial attempt to use YOLOv9 faced training bugs, necessitating a switch to YOLOv8n.
-
-## Conclusions and Potential Improvements
-
-The YOLOv8n model demonstrated robust performance in detecting various leaf diseases. Future work will explore using YOLOv9 and YOLOv10, enhancing the dataset, and fine-tuning hyperparameters.
 
 ## Acknowledgments
 
